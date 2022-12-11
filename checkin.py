@@ -23,7 +23,7 @@ def connect(cookie_string):
         message = f"{message}Status:{res}\n"
         res = resp["msg"]
         message = f"{message}Reasons:{res}\n"
-    eles:
+    else:
         res = resp["msg"]
         message = f"{message}Status:{res}\n"
         response = requests.post(url1, headers=my_headers)
