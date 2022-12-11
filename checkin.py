@@ -1,7 +1,7 @@
 # encoding=utf8
 import requests
 import json
-def glados(cookie_string):
+def connect(cookie_string):
     # 灰狼云续费url
     url2 = "https://www.yun316.net/data/host.php?act=renew&id=3342&planid=3342&m=1"
     my_headers = {
