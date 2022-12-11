@@ -8,14 +8,14 @@ def connect(cookie_string):
     my_headers1 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
-        'referer': 'https://www.yun316.net/host/manager'
-        'accept-encoding': 'gzip, deflate, br'
+        'referer': 'https://www.yun316.net/host/manager',
+        'accept-encoding': 'gzip, deflate, br',
     }
     my_headers2 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
-        'referer': 'https://www.yun316.net/host/panel/3342'
-        'accept-encoding': 'gzip, deflate, br'
+        'referer': 'https://www.yun316.net/host/panel/3342',
+        'accept-encoding': 'gzip, deflate, br',
     }
     response = requests.post(url2, headers=my_headers2)
     message = str()
