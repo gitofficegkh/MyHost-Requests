@@ -20,12 +20,13 @@ def connect(cookie_string):
       return checkin_code, message
     checkin_code = 1
     resp = json.loads(response.text)
-    res = resp["sta"]
+    statu = resp["sta"]
+    res = resp["msg"]
     # message = f"{message}Status:{res}\n"
     # res = resp["msg"]
     # message = f"{message}Reasons:{res}\n"
-    if "error" in res:
-        message = f"{message}Status:{res}\n"
+    if "error" == statu:
+        message = f"{message}Status:{statu}\n"
         res = resp["msg"]
         message = f"{message}Reasons:{res}\n"
     return checkin_code, message
