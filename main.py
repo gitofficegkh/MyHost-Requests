@@ -27,16 +27,17 @@ if __name__ == "__main__":
 
     message_sender = MessageSender()
 
-    message_all = str()
-    message_all = f"{message_all}访问结果\n"
+    # message_all = str()
+    # message_all = f"{message_all}访问结果\n"
     checkin_code, message = connect(cookie_string)
-    message_all = f"{message_all}{message}\n"
+    # message_all = f"{message_all}{message}\n"
 
     if checkin_code != 0:
         title = "灰狼云访问成功"
     else:
         title = "灰狼云访问失败"
-    message_all = f"{title}\n{message}"
+    # message_all = f"{title}\n{message}"
+    message_all = f"访问结果:\n{message}"
     message_all = re.sub("\n+","\n", message_all)
     if message_all.endswith("\n"): message_all = message_all[:-1]
     message_sender.send_all(message_tokens= message_tokens, title = title, content = message_all)
