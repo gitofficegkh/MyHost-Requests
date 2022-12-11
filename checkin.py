@@ -7,7 +7,7 @@ def connect(cookie_string):
     my_headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
-}
+    }
     response = requests.post(url2, headers=my_headers)
     message = str()
     if response.status_code != 200: 
@@ -15,7 +15,7 @@ def connect(cookie_string):
       message = f"{message}Status:error\n"
       message = f"{message}Checkin:Login fails, please check your cookie.\n"
       return checkin_code, message
-    print(response.text)  # response.text和浏览器返回数据相同说明post数据成功
+    # print(response.text)  # response.text和浏览器返回数据相同说明post数据成功
     checkin_code = 1
     resp = json.loads(response.text)
     res = resp["sta"]
