@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     message_sender = MessageSender()
 
-    # message_all = str()
+    message_all = str()
     # message_all = f"{message_all}访问结果\n"
     checkin_code, message = connect(cookie_string)
     # message_all = f"{message_all}{message}\n"
