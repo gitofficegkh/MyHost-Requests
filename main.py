@@ -3,7 +3,7 @@ import os
 import re
 import argparse
 
-from checkin import checkin
+from connect import checkin
 from messageSender import MessageSender
 
 if __name__ == "__main__":
