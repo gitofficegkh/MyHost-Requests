@@ -32,5 +32,5 @@ def connect(cookie_string):
         res = "未知"
         for i in it:
             res = i.group("time")
-        message = f"{message}到期时间:{res}\n"
+        message = f"{message}Extime:{res}\n"
     return checkin_code, message
