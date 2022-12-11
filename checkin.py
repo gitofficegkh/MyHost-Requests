@@ -28,14 +28,4 @@ def connect(cookie_string):
         message = f"{message}Status:{res}\n"
         res = resp["msg"]
         message = f"{message}Reasons:{res}\n"
-    else:
-        res = resp["msg"]
-        message = f"{message}Status:{res}\n"
-        response = http.post(url1, headers=my_headers)
-        obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
-        it = obj.finditer(response.text)
-        res = '未知'
-        for i in it:
-            res = i.group("time")
-        message = f"{message}Extime:{res}\n"
     return checkin_code, message
