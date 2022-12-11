@@ -28,9 +28,9 @@ if __name__ == "__main__":
     message_sender = MessageSender()
 
     message_all = str()
-    # message_all = f"{message_all}访问结果\n"
+    message_all = f"{message_all}访问结果\n"
     checkin_code, message = connect(cookie_string)
-    # message_all = f"{message_all}{message}\n"
+    message_all = f"{message_all}{message}\n"
 
     if checkin_code != 0:
         title = "灰狼云访问成功"
