@@ -32,7 +32,7 @@ if __name__ == "__main__":
     checkin_code, message = connect(cookie_string)
     # message_all = f"{message_all}{message}\n"
 
-    if checkin_codes != 0:
+    if checkin_code != 0:
         title = "灰狼云访问成功"
     else:
         title = "灰狼云访问失败"
