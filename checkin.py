@@ -11,7 +11,7 @@ def glados(cookie_string):
     response = requests.post(url2, headers=my_headers)
     message = str()
     if response.status_code != 200: 
-      checkin_code = -2
+      checkin_code = 0
       message = f"{message}Status:error\n"
       message = f"{message}Checkin:Login fails, please check your cookie.\n"
       return checkin_code, message
