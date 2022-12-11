@@ -18,6 +18,8 @@ def glados(cookie_string):
     print(response.text)  # response.text和浏览器返回数据相同说明post数据成功
     checkin_code = 1
     resp = json.loads(response.text)
-    message = f"{message}Status:{resp["sta"]}\n"
-    message = f"{message}Checkin:{resp["msg"]}\n"
+    res = resp["sta"]
+    message = f"{message}Status:{res}\n"
+    res = resp["msg"]
+    message = f"{message}Checkin:{res}\n"
     return checkin_code, message
