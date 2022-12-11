@@ -3,7 +3,7 @@ import os
 import re
 import argparse
 
-from glados import glados
+from checkin import checkin
 from messageSender import MessageSender
 
 if __name__ == "__main__":
