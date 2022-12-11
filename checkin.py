@@ -9,9 +9,7 @@ def connect(cookie_string):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
     }
-    # 创建一个session()对象
-    http = requests.session()
-    response = http.post(url2, headers=my_headers)
+    response = requests.post(url2, headers=my_headers)
     message = str()
     if response.status_code != 200: 
       checkin_code = 0
@@ -22,11 +20,21 @@ def connect(cookie_string):
     resp = json.loads(response.text)
     statu = resp["sta"]
     res = resp["msg"]
+    statu = '未知'
+    res = '未知'
     # message = f"{message}Status:{res}\n"
     # res = resp["msg"]
     # message = f"{message}Reasons:{res}\n"
-    if "error" == statu:
-        message = f"{message}Status:{statu}\n"
+    if "error" in resp["sta"]:
+        statu = resp["sta"]
         res = resp["msg"]
-        message = f"{message}Reasons:{res}\n"
+    else:
+        statu = resp["msg"]
+        response = requests.get(url1, headers=my_headers)
+        obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
+        it = obj.finditer(response.text)
+        for i in it:
+            res = i.group("time")
+    message = f"{message}Status:{statu}\n"
+    message = f"{message}Reasons:{res}\n"
     return checkin_code, message
