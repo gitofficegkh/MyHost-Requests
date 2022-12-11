@@ -29,9 +29,9 @@ def connect(cookie_string):
     else:
         res = resp["msg"]
         message = f"{message}Status:{res}\n"
-        response = requests.get(url1, headers=my_headers)
+        s = requests.post(url1, headers=my_headers)
         obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
-        it = obj.finditer(response.text)
+        it = obj.finditer(s.text)
         res = '未知'
         for i in it:
             res = i.group("time")
