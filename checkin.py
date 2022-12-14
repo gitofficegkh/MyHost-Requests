@@ -32,7 +32,7 @@ def connect(cookie_string):
         checkin_code = 0
         message = f"{message}Status:error\n"
         message = f"{message}Reasons:Login fails, please check your cookie.\n"
-    return checkin_code, message
+        return checkin_code, message
     checkin_code = 1
     resp = json.loads(response.text)
     statu = resp["sta"]
