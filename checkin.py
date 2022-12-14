@@ -41,7 +41,6 @@ def connect(cookie_string):
         message = f"{message}Status:{statu}\n"
         message = f"{message}Extime:{res}\n"
     else:
-        res = resp["msg"]
         message = f"{message}Status:{statu}\n"
         message = f"{message}Reasons:{res}\n"
     return checkin_code, message
