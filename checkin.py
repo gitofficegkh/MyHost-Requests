@@ -26,7 +26,7 @@ def connect(cookie_string):
         'referer': 'https://www.yun316.net/host/panel/3342',
         'accept-encoding': 'gzip, deflate, br',
     }
-    response = requests.post(url2, headers=my_headers2)
+    response = requests.get(url2, headers=my_headers2)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
