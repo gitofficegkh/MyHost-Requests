@@ -33,7 +33,7 @@ def connect(cookie_string):
         'sec-fetch-user': '?1',
         'accept-encoding': 'gzip, deflate, br',
     }
-    response = requests.get(url2, headers=my_headers2)
+    response = requests.get(url2, headers=my_headers2, verify=False)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
