@@ -36,7 +36,10 @@ def connect(cookie_string):
     checkin_code = 1
     resp = json.loads(response.text)
     statu = resp["sta"]
-    if "ok" in resp["sta"]:
+    res = resp["msg"]
+    message = f"{message}Status:{statu}\n"
+    message = f"{message}Reasons:{res}\n"
+    '''if "ok" in resp["sta"]:
         statu = resp["msg"]
         res = getextime(cookie_string)
         message = f"{message}Status:{statu}\n"
@@ -44,5 +47,5 @@ def connect(cookie_string):
     else:
         res = resp["msg"]
         message = f"{message}Status:{statu}\n"
-        message = f"{message}Reasons:{res}\n"
+        message = f"{message}Reasons:{res}\n"'''
     return checkin_code, message
