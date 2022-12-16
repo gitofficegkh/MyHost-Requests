@@ -1,5 +1,6 @@
 # encoding=utf8
 import requests
+from time import sleep
 import json
 import re
 def getextime(cookie_string):
@@ -24,7 +25,8 @@ def connect(cookie_string):
         'cookie': cookie_string,
         'referer': 'https://www.yun316.net/host/panel/3342',
     }
-    response = requests.get(url2, headers=my_headers2, verify=False)
+    sleep(6)
+    response = requests.post(url2, headers=my_headers2, verify=False)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
