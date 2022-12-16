@@ -7,6 +7,7 @@ def getextime(cookie_string):
     my_headers1 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
+        'referer': 'https://www.yun316.net/host/manager',
     }
     response = requests.get(url1, headers=my_headers1, verify=False)
     obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
@@ -21,6 +22,7 @@ def connect(cookie_string):
     my_headers2 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
+        'referer': 'https://www.yun316.net/host/panel/3342'
     }
     response = requests.get(url2, headers=my_headers2, verify=False)
     message = str()
