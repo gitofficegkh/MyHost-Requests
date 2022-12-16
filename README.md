@@ -1,2 +1,2 @@
 # MyHost-Request
-For Renewal Free-Host of "yun316".
+某云的免费虚拟主机自动续费。
