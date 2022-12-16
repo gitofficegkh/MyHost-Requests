@@ -3,12 +3,14 @@ import requests
 from time import sleep
 import json
 import re
+import os
 def getextime(cookie_string):
-    url1 = "https://www.yun316.net/host/panel/3342"
+    base_url=os.environ.get("HOST", None)
+    url1 = base_url+'/host/panel/3342'
     my_headers1 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
-        'referer': 'https://www.yun316.net/host/manager',
+        # 'referer': 'https://www.yun316.net/host/manager',
     }
     response = requests.get(url1, headers=my_headers1, verify=False)
     obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
@@ -19,11 +21,12 @@ def getextime(cookie_string):
     return res
             
 def connect(cookie_string):
-    url2 = "https://www.yun316.net/data/host.php?act=renew&id=3342&planid=3342&m=1"
+    base_url=os.environ.get("HOST", None)
+    url2 = base_url+'/data/host.php?act=renew&id=3342&planid=3342&m=1'
     my_headers2 = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
-        'referer': 'https://www.yun316.net/host/panel/3342',
+        # 'referer': 'https://www.yun316.net/host/panel/3342',
         'sec-ch-ua': "Not?A_Brand;v=8, Chromium;v=108, Microsoft Edge;v=108",
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-platform': "Windows",
