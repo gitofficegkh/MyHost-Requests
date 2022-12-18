@@ -11,7 +11,7 @@ def getextime(cookie_string):
         'cookie': cookie_string,
         'referer': base_url+'/host/manager',
     }
-    response = requests.get(url1, headers=my_headers1)
+    response = requests.get(url1, headers=my_headers1, verify=False)
     obj = re.compile(r"<tr><td>到期时间</td><td>(?P<time>.*?)</td>")
     it = obj.finditer(response.text)
     res='未知'
@@ -34,7 +34,7 @@ def connect(cookie_string):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
     }
-    response = requests.post(url2, headers=my_headers2)
+    response = requests.post(url2, headers=my_headers2, verify=False)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
