@@ -1,6 +1,5 @@
 # encoding=utf8
 import requests
-from time import sleep
 import json
 import re
 import os
@@ -27,8 +26,14 @@ def connect(cookie_string):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.42',
         'cookie': cookie_string,
         'referer': base_url+'/host/panel/3342',
+        'sec-ch-ua': "Not?A_Brand;v=8, Chromium;v=108, Microsoft Edge;v=108",
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': "Windows",
+        'sec-fetch-dest': 'document',
+        'sec-fetch-mode': 'navigate',
+        'sec-fetch-site': 'same-origin',
+        'sec-fetch-user': '?1',
     }
-    sleep(6)
     response = requests.post(url2, headers=my_headers2)
     message = str()
     if response.status_code != 200: 
