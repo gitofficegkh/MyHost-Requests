@@ -42,8 +42,8 @@ def connect(cookie_string):
     #账号密码存放处
     data = {
         'email': 'gukeheng@163.com',
-        'password': '85621463'
-        'remember': 'on'
+        'password': '85621463',
+        'remember': 'on',
     }
     # 登录
     url = "https://www.yun316.net/data/user.php?act=login"
