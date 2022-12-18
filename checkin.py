@@ -37,7 +37,7 @@ def connect(cookie_string):
         'upgrade-insecure-requests': '1',
     }
     time.sleep(6)
-    response = requests.post(url2, headers=my_headers2, timeout=15)
+    response = requests.post(url2, headers=my_headers2, verify=False)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
