@@ -1,6 +1,7 @@
 # encoding=utf8
 import requests
 import json
+import time
 import re
 import os
 def getextime(cookie_string):
@@ -34,6 +35,7 @@ def connect(cookie_string):
         'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
     }
+    time.sleep(6)
     response = requests.post(url2, headers=my_headers2, proxies={'http': f'http://127.0.0.1:11223','https': f'http://127.0.0.1:11223'})
     message = str()
     if response.status_code != 200: 
