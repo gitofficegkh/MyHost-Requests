@@ -48,7 +48,7 @@ def connect(cookie_string):
     # 登录
     # url = "https://www.yun316.net/data/user.php?act=login"
     url = "https://www.yun316.net/"
-    response = session.get(url,data=data)
+    response = session.get(url)
     print(response.txt)
     # 签到
     response = session.post(url2)
