@@ -37,21 +37,7 @@ def connect(cookie_string):
         'upgrade-insecure-requests': '1',
     }
     time.sleep(6)
-    # response = requests.post(url2, headers=my_headers2, verify=False)
-    session = requests.session()
-    #账号密码存放处
-    data = {
-        'email': 'gukeheng@163.com',
-        'password': '85621463',
-        'remember': 'on',
-    }
-    # 登录
-    # url = "https://www.yun316.net/data/user.php?act=login"
-    url = "https://www.yun316.net/"
-    response = session.get(url)
-    print(response.txt)
-    # 签到
-    response = session.post(url2)
+    response = requests.post(url2, headers=my_headers2, verify=False)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
