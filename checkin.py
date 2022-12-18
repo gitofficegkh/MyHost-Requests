@@ -46,8 +46,10 @@ def connect(cookie_string):
         'remember': 'on',
     }
     # 登录
-    url = "https://www.yun316.net/data/user.php?act=login"
-    session.post(url,data=data)
+    # url = "https://www.yun316.net/data/user.php?act=login"
+    url = "https://www.yun316.net/"
+    response = session.get(url,data=data)
+    print(response.txt)
     # 签到
     response = session.post(url2)
     message = str()
