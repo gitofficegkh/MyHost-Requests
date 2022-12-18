@@ -37,7 +37,11 @@ def connect(cookie_string):
         'upgrade-insecure-requests': '1',
     }
     time.sleep(6)
-    response = requests.post(url2, headers=my_headers2, proxies={'http': f'http://127.0.0.1:11223','https': f'http://127.0.0.1:11223'})
+    proxies = {
+    "http": 'http://127.0.0.1:11223',
+    "https": 'http://127.0.0.1:11223',
+    }
+    response = requests.post(url2, headers=my_headers2, proxies=proxies)
     message = str()
     if response.status_code != 200: 
         checkin_code = 0
