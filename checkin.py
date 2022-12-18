@@ -38,8 +38,8 @@ def connect(cookie_string):
     }
     time.sleep(6)
     proxies = {
-    "http": 'http://127.0.0.1:11223',
-    "https": 'http://127.0.0.1:11223',
+    "http": 'http://127.0.0.1:8866',
+    "https": 'http://127.0.0.1:8866',
     }
     response = requests.post(url2, headers=my_headers2, proxies=proxies)
     message = str()
